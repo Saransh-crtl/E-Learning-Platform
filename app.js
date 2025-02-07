@@ -91,17 +91,20 @@ const loginButton = document.getElementById("login-form-submit");
 
 const loginForm = document.getElementById("login_form");
 
-loginButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  const username = loginForm.username.value;
-  const password = loginForm.password.value;
+loginForm.addEventListener("submit", (e) => {  // Listen for form SUBMIT
+    e.preventDefault(); // Prevent default form submission (page reload)
 
-  if (username === "Saransh" && password === "test@gmail.com") {
-    alert("You have successfully logged in.");
-    window.location.replace("home.html");
-  } else {
-    alert("wrong id password");
-  }
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    console.log("Username:", username, "Password:", password); // Debugging
+
+    if (username === "Saransh" && password === "test@gmail.com") {
+        alert("You have successfully logged in.");
+        window.location.replace("home.html"); // Redirect on success
+    } else {
+        alert("Wrong ID or password");
+    }
 });
 
 
